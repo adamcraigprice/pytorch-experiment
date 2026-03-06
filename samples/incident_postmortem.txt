@@ -1,0 +1,33 @@
+Meeting: Incident Post-Mortem — Production Outage
+Date: 2026-02-28
+Attendees: Lisa, Raj, Priya, Kevin
+
+Lisa: As you all know, we had a 3-hour production outage last Tuesday affecting 15,000 users. Let's walk through the timeline and action items.
+
+Raj: The outage started at 14:02 UTC when the primary database ran out of disk space. The auto-scaling policy wasn't triggered because the monitoring threshold was set too high.
+
+Priya: I was on call. The first alert came at 14:15 — 13 minutes after the outage began. That's too slow. Action item: Priya will reconfigure alerting thresholds to trigger at 80% disk usage instead of 95%.
+
+Kevin: The failover to the read replica didn't work because the replica was 6 hours behind. TODO: Kevin needs to fix the replication lag monitoring and set up alerts for lag exceeding 5 minutes.
+
+Lisa: That's a critical gap. We should also needs to test our failover procedure monthly. Raj, can you own that?
+
+Raj: Yes. I'll set up automated failover drills. Make sure the runbook is updated with the correct failover steps — the current version references the old infrastructure.
+
+Priya: The root cause was a batch job that wrote 500 GB of temporary data without cleanup. Assigned to Kevin: implement automatic temp data cleanup with a 24-hour retention policy. This is urgent and needs to be done by end of week.
+
+Kevin: I'll handle it. I'll also add disk usage forecasting so we can predict when we'll hit capacity limits.
+
+Lisa: Good. Follow-up: schedule a reliability review with the VP of Engineering. We need budget approval for the infrastructure improvements.
+
+Raj: On the communication side — our status page wasn't updated for 45 minutes after the outage started. Please automate status page updates when critical alerts fire. Task: Raj will integrate PagerDuty with the status page by next Tuesday.
+
+Priya: Don't forget to post the post-mortem summary to the engineering blog. Transparency builds trust with our users.
+
+Lisa: Agreed. Make sure the summary is blameless and focuses on systemic improvements. Kevin, can you draft it?
+
+Kevin: Sure. ASAP — I'll have it ready by tomorrow.
+
+Lisa: Last thing — we need to invest in chaos engineering. TODO: set up a chaos testing framework in the staging environment. Raj should lead this initiative.
+
+Lisa: Thanks everyone. Let's make sure all action items are tracked in Jira with owners and deadlines.

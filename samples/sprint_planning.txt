@@ -1,0 +1,37 @@
+Meeting: Q1 Sprint Planning
+Date: 2026-03-01
+Attendees: Alice, Bob, Carol, Dave
+
+Alice: Welcome everyone. Let's review the sprint goals for Q1. We have a lot to cover today so let's stay focused.
+
+Bob: Sure. I've finished the authentication module last week. The OAuth2 flow is working and all unit tests pass. We still need to integrate it with the frontend and the mobile app.
+
+Carol: That's great progress. I've been working on the API documentation. Action item: Carol will update the API documentation for the new auth endpoints by Friday.
+
+Dave: On the infrastructure side, the CI pipeline has been failing intermittently since last week. TODO: Dave needs to fix the CI pipeline — it's been breaking on the integration test stage. I think it's a Docker image caching issue.
+
+Alice: Bob should deploy the auth module to staging by Wednesday so we can start QA testing.
+
+Carol: Speaking of QA — please review the pull requests in the auth repo before end of day. There are three open PRs that are blocking the release branch.
+
+Alice: Good point. Make sure everyone updates their Jira tickets with current status. We need accurate burndown charts for the stakeholder meeting on Thursday.
+
+Bob: One more thing — the database migration for the new user roles is a blocker. We need to resolve it ASAP or it will push back the entire release. The migration script fails on the production schema because of a foreign key constraint.
+
+Dave: I can help with that. I'll also set up monitoring dashboards for the new auth service by next week. We need alerts for failed login attempts and token refresh rates.
+
+Alice: Follow-up: schedule a design review for the new dashboard feature. We need UX, frontend, and backend all in the same room. Carol, can you own that?
+
+Carol: Sure. I'll send out a calendar invite for next Tuesday. Also a reminder — the client demo is tomorrow. We need the staging environment ready today. Assigned to Bob: prepare the demo script and walkthrough by end of day.
+
+Dave: Task: investigate the memory leak in the worker service. It's been consuming 2x the expected memory after the last deployment.
+
+Alice: Let's also talk about the new feature requests. The product team wants us to add real-time notifications. We should needs to scope that for the next sprint.
+
+Bob: I can write up a technical design doc for the notification system. I'll need input from the mobile team.
+
+Alice: That would be great. Make sure to include cost estimates for the push notification provider.
+
+Carol: Don't forget to update the changelog before the release. Last time we forgot and the support team was confused about what changed.
+
+Alice: Good call. That's all for today. Thanks everyone. Let's stay on track this week — we have a lot of deliverables.

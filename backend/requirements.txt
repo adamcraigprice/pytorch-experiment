@@ -1,8 +1,29 @@
-fastapi
-uvicorn
-torch
-transformers
-faiss-cpu
-scikit-learn
-pydantic
-python-dotenv
+# ============================================================
+# AI Productivity Assistant – Python Dependencies
+# ============================================================
+# Install:  pip install -r backend/requirements.txt
+# ============================================================
+
+# -- Web Framework ------------------------------------------------
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.6          # for UploadFile support
+
+# -- ML / Deep Learning -------------------------------------------
+torch>=2.1.0
+transformers>=4.37.0
+sentencepiece>=0.1.99            # T5 tokenizer dependency
+
+# -- Vector Search -------------------------------------------------
+faiss-cpu>=1.7.4                 # Facebook AI Similarity Search
+
+# -- Data & Utilities ---------------------------------------------
+numpy>=1.24.0
+scikit-learn>=1.3.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-dotenv>=1.0.0
+
+# -- Testing -------------------------------------------------------
+pytest>=7.4.0
+httpx>=0.25.0                    # required by TestClient (ASGI)

@@ -1,0 +1,27 @@
+Meeting: Product Roadmap Review
+Date: 2026-02-15
+Attendees: Sarah, Mike, Jenny, Tom
+
+Sarah: Let's go through the roadmap for Q2. We have three major themes: platform scalability, user engagement, and enterprise features.
+
+Mike: On scalability — we need to migrate from our current monolith to a microservices architecture. This is a multi-quarter effort. Action item: Mike will create the migration plan document by end of month.
+
+Jenny: For user engagement, the data shows our onboarding flow has a 40% drop-off rate. TODO: Jenny needs to redesign the onboarding wizard based on the user research findings.
+
+Tom: The enterprise clients have been asking for SSO and SCIM provisioning. These are critical for closing the Acme Corp deal. Tom should start the SSO implementation by next Monday.
+
+Sarah: That Acme deal is worth $2M ARR. Make sure SSO is the top priority for the enterprise team.
+
+Mike: Agreed. The API rate limiting is also urgent for enterprise. We've had three incidents this month where a single tenant consumed 80% of our capacity. Please implement tenant-level rate limiting this sprint.
+
+Jenny: I've been looking at the analytics pipeline. Follow-up: we need to evaluate whether to build our own event tracking or use a third-party service. Task: Jenny will prepare a build-vs-buy analysis by March 1.
+
+Tom: On the technical debt front — our test coverage is at 45%. We should needs to get it to at least 70% before adding new features. Don't forget to add integration tests for the payment flow.
+
+Sarah: Good point. Assigned to Tom: create a test coverage improvement plan and present it at next week's engineering all-hands.
+
+Mike: One more thing — the deployment process takes 45 minutes. We should invest in parallel builds. TODO: Mike will spike on parallel CI/CD runners this week.
+
+Jenny: Remember to update the public API changelog. Our developer community has been complaining about undocumented breaking changes.
+
+Sarah: Absolutely. Make sure all breaking changes go through the API review board first. That's all. Let's reconvene in two weeks.

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Data / model caches
+data/
+*.faiss
+huggingface/
+.cache/
+
+# Environment
+.env
+
+# OS
+Thumbs.db
+.DS_Store
